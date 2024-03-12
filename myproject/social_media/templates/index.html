@@ -6,19 +6,25 @@
     <title>For you page</title>
 </head>
 <body>
-    {% if data%}
-    {%for row in data%}
-        
-        <ul>
-        <li>{{row.user}}</li>
-        <li>{{row.likes}}</li>
-        <li>{{row.content}}</li>
-        <li>{{row.created_at}}</li>
-        </ul>
-    {% endfor %}
-    {% else %}
-    <h1>No data</h1>
-    {% endif %}
+    <div class="container">
+        <div class="container">
+            {% if data %}
+            {%for row in data%}
+                
+                <ul>
+                <li>{{row.user}}</li>
+                <li>{{row.likes}}</li>
+                <li>{{row.content}}</li>
+                <li>{{row.created_at}}</li>
+                </ul>
+            {% endfor %}
+            {% else %}
+            <h1>No data</h1>
+            {% endif %}
+
+        </div>
+    </div
+    
 
 </body>
 </html>

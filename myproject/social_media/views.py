@@ -11,6 +11,16 @@ def index(request):
     return render(request, 'index.html', {'data': context})
 
 
+def create_user(request):
+    if request.method == "POST":
+        username = request.POST.get('username')  # Use POST method to retrieve form data
+        password = request.POST.get('password')  # Use POST method to retrieve form data
+        new_user = User.objects.create_user(username=username, password=password)
+        new_user.save()
+        return redirect('index')  # Redirect to index page 
+    else:
+        return render(request, 'create_user.html', {})
+ 
 
 
 
